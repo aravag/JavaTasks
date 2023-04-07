@@ -20,8 +20,8 @@ public static Person findPersonByName(String name) {
         while (line != null) {
             String[] tokens = line.split(",");
             String personName = tokens[0];
-            String gender = tokens[1];
-            int age = Integer.parseInt(tokens[2]);
+            int age = Integer.parseInt(tokens[1]);
+            String gender = tokens[2];
             if (personName.equalsIgnoreCase(name)) {
                 reader.close();
                 return new Person(personName, age, gender);
