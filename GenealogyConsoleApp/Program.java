@@ -59,7 +59,7 @@ private static void addPerson() {
         System.out.println("What is the relationship to the relative? (parent/child/sibling)");
         String relation = scanner.nextLine();
         RelationshipType relationshipType = RelationshipType.valueOf(relation.toUpperCase());
-        Person person = GenealogyTree.findPersonByName(name);
+        Person person = GenealogyTree.findPersonByName(relativeName);
         if (person == null) {
             System.out.println("Person not found!");
             GenealogyTree.addPerson(new Person(name, age, gender));

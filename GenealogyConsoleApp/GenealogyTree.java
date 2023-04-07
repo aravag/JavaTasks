@@ -11,9 +11,6 @@ import java.io.IOException;
 public class GenealogyTree {
 private static List<Person> people = new ArrayList<Person>();
 public static Person findPersonByName(String name) {
-    if (people == null) {
-        return null;
-    }
     try {
         BufferedReader reader = new BufferedReader(new FileReader("People.txt"));
         String line = reader.readLine();
