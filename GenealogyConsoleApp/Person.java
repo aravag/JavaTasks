@@ -59,8 +59,8 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age=" + age +
+                ", age='" + age + '\'' +
+                ", gender=" + gender +
                 '}';
     }
 }

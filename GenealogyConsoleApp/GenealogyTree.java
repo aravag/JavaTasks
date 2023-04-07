@@ -43,7 +43,7 @@ public static void addPerson(Person person) {
     people.add(person);
     try {
         BufferedWriter writer = new BufferedWriter(new FileWriter("People.txt", true));
-        writer.write(person.getName() + "," + person.getGender() + "," + person.getAge() + "\n");
+        writer.write(person.getName() + "," + person.getAge() + "," + person.getGender() + "\n");
         writer.close();
     } catch (IOException e) {
         e.printStackTrace();
