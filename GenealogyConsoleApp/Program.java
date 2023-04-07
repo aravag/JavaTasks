@@ -61,12 +61,12 @@ private static void addPerson() {
         RelationshipType relationshipType = RelationshipType.valueOf(relation.toUpperCase());
         Person person = GenealogyTree.findPersonByName(relativeName);
         if (person == null) {
-            System.out.println("Person not found!");
+            System.out.println("Relative not found!");
             GenealogyTree.addPerson(new Person(name, age, gender));
             System.out.println("Person added successfully!");
             return;
         }
-        Person relative = new Person(relativeName, 0, "");
+        Person relative = new Person(name, age, gender);
         person.addRelative(relative, relationshipType);
         GenealogyTree.addPerson(relative);
     } else {
