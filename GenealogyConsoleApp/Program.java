@@ -62,6 +62,8 @@ private static void addPerson() {
         Person person = GenealogyTree.findPersonByName(name);
         if (person == null) {
             System.out.println("Person not found!");
+            GenealogyTree.addPerson(new Person(name, age, gender));
+            System.out.println("Person added successfully!");
             return;
         }
         Person relative = new Person(relativeName, 0, "");
