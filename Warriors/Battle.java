@@ -16,7 +16,7 @@ public class Battle {
             if (attack != 0) {
                 if (defender.isShield()) {
                     defender.reduceShield(attack);
-                    System.out.printf("Warrior %s deals damage %d,\nWarrior %s have %d shield. His HP is full", attacker.getName(),attack, defender.getName(), defender.getShield());
+                    System.out.printf("Warrior %s deals damage %d,\nWarrior %s have %d points of shield. His HP is full", attacker.getName(),attack, defender.getName(), defender.getShield());
                 } else {
                     defender.reduceHP(attack);
                     System.out.printf("Warrior %s deals damage %d,\nWarrior %s have %d HP", attacker.getName(), attack,defender.getName(), defender.getHP());
@@ -39,7 +39,7 @@ public class Battle {
             if (attack != 0) {
                 if (attacker.isShield()) {
                     attacker.reduceShield(attack);
-                    System.out.printf("Warrior %s deals damage %d,\nWarrior %s have %d shield. His HP is full", defender.getName(), attack, attacker.getName(), attacker.getShield());
+                    System.out.printf("Warrior %s deals damage %d,\nWarrior %s have %d points of shield. His HP is full", defender.getName(), attack, attacker.getName(), attacker.getShield());
                 } else {
                     attacker.reduceHP(attack);
                     System.out.printf("Warrior %s deals damage %d,\nWarrior %s have %d HP", defender.getName(), attack, attacker.getName(), attacker.getHP());
