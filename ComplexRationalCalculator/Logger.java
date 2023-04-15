@@ -18,7 +18,6 @@ public class Logger {
 
     public void log(String message) {
         String logMessage = getCurrentTime() + " - " + message + "\n";
-        System.out.print(logMessage);
 
         try {
             fileWriter.write(logMessage);

@@ -15,23 +15,24 @@ public class Menu {
 
     public void start() {
         while (running) {
-            System.out.println("Выберите тип данных: \n1 - комплексные числа \n2 - рациональные числа");
-            int dataType = scanner.nextInt();
-            Calculator calculator;
-            
-            if (dataType == 1) {
-                calculator = new Calculator(logger);
-            } 
-            else {
-                calculator = new Calculator(logger);
-            }
-
-            System.out.println("Выберите операцию: \n1 - сложение \n2 - вычитание \n3 - умножение \n4 - деление \n5 - завершение работы");
+            System.out.println(
+                    "Выберите операцию: \n1 - сложение \n2 - вычитание \n3 - умножение \n4 - деление \n5 - завершение работы");
             int operation = scanner.nextInt();
             if (operation == 5) {
                 System.out.println("Завершение работы...");
                 running = false;
+                break;
             }
+            System.out.println("Выберите тип данных: \n1 - комплексные числа \n2 - рациональные числа");
+            int dataType = scanner.nextInt();
+            Calculator calculator;
+
+            if (dataType == 1) {
+                calculator = new Calculator(logger);
+            } else {
+                calculator = new Calculator(logger);
+            }
+
             double num1Real = 0, num1Imaginary = 0, num2Real = 0, num2Imaginary = 0;
             int num1Numerator = 0, num1Denominator = 0, num2Numerator = 0, num2Denominator = 0;
             Complex num1 = null;
