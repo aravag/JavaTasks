@@ -15,121 +15,93 @@ public class Menu {
 
     public void start() {
         while (running) {
-            System.out.println("Выберите тип данных: 1 - комплексные числа, 2 - рациональные числа");
+            System.out.println("Выберите тип данных: \n1 - комплексные числа \n2 - рациональные числа");
             int dataType = scanner.nextInt();
             Calculator calculator;
+            
             if (dataType == 1) {
                 calculator = new Calculator(logger);
-            } else {
+            } 
+            else {
                 calculator = new Calculator(logger);
             }
 
-            System.out.println("Выберите операцию: 1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление");
+            System.out.println("Выберите операцию: \n1 - сложение \n2 - вычитание \n3 - умножение \n4 - деление \n5 - завершение работы");
             int operation = scanner.nextInt();
+            if (operation == 5) {
+                System.out.println("Завершение работы...");
+                running = false;
+            }
             double num1Real = 0, num1Imaginary = 0, num2Real = 0, num2Imaginary = 0;
             int num1Numerator = 0, num1Denominator = 0, num2Numerator = 0, num2Denominator = 0;
+            Complex num1 = null;
+            Complex num2 = null;
+            Rational num1R = null;
+            Rational num2R = null;
 
             if (dataType == 1) {
-                System.out.println("Введите действительную и мнимую части первого числа:");
+                System.out.println("Введите действительную часть первого числа:");
                 num1Real = scanner.nextDouble();
+                System.out.println("Введите мнимую часть первого числа:");
                 num1Imaginary = scanner.nextDouble();
-                System.out.println("Введите действительную и мнимую части второго числа:");
+                System.out.println("Введите действительную часть второго числа:");
                 num2Real = scanner.nextDouble();
+                System.out.println("Введите мнимую часть второго числа:");
                 num2Imaginary = scanner.nextDouble();
+                num1 = new Complex(num1Real, num1Imaginary);
+                num2 = new Complex(num2Real, num2Imaginary);
             } else {
-                System.out.println("Введите числитель и знаменатель первого числа:");
+                System.out.println("Введите числитель первого числа:");
                 num1Numerator = scanner.nextInt();
+                System.out.println("Введите знаменатель первого числа:");
                 num1Denominator = scanner.nextInt();
-                System.out.println("Введите числитель и знаменатель второго числа:");
+                System.out.println("Введите числитель второго числа:");
                 num2Numerator = scanner.nextInt();
+                System.out.println("Введите знаменатель второго числа:");
                 num2Denominator = scanner.nextInt();
+                num1R = new Rational(num1Numerator, num1Denominator);
+                num2R = new Rational(num2Numerator, num2Denominator);
             }
 
             String result = "";
             switch (operation) {
                 case 1:
                     if (dataType == 1) {
-                        Complex num1 = new Complex(num1Real, num1Imaginary);
-                        Complex num2 = new Complex(num2Real, num2Imaginary);
                         Complex sum = calculator.sum(num1, num2);
                         result = sum.toString();
                     } else {
-                        Rational num1 = new Rational(num1Numerator, num1Denominator);
-                        Rational num2 = new Rational(num2Numerator, num2Denominator);
-                        Rational sum = calculator.sum(num1, num2);
+                        Rational sum = calculator.sum(num1R, num2R);
                         result = sum.toString();
                     }
                     break;
                 case 2:
                     if (dataType == 1) {
-                        Complex num1 = new Complex(num1Real, num1Imaginary);
-                        Complex num2 = new Complex(num2Real, num2Imaginary);
                         Complex diff = calculator.diff(num1, num2);
                         result = diff.toString();
                     } else {
-                        Rational num1 = new Rational(num1Numerator, num1Denominator);
-                        Rational num2 = new Rational(num2Numerator, num2Denominator);
-                        Rational diff = calculator.diff(num1, num2);
+                        Rational diff = calculator.diff(num1R, num2R);
                         result = diff.toString();
                     }
                     break;
                 case 3:
                     if (dataType == 1) {
-                        Complex num1 = new Complex(num1Real, num1Imaginary);
-                        Complex num2 = new Complex(num2Real, num2Imaginary);
-                        Complex result1;
-                        switch (operation) {
-                            case 1:
-                                result1 = calculator.sum(num1, num2);
-                                break;
-                            case 2:
-                                result1 = calculator.diff(num1, num2);
-                                break;
-                            case 3:
-                                result1 = calculator.mult(num1, num2);
-                                break;
-                            case 4:
-                                result1 = calculator.div(num1, num2);
-                                break;
-                            default:
-                                System.out.println("Неверная операция.");
-                                continue;
-                        }
-                        result1 = calculator.simplify(result1);
-                        logger.log(result1.toString());
-                    } else if (dataType == 2) {
-                        Rational num1 = new Rational(num1Numerator, num1Denominator);
-                        Rational num2 = new Rational(num2Numerator, num2Denominator);
-                        Rational result2;
-                        switch (operation) {
-                            case 1:
-                                result2 = calculator.sum(num1, num2);
-                                break;
-                            case 2:
-                                result2 = calculator.diff(num1, num2);
-                                break;
-                            case 3:
-                                result2 = calculator.mult(num1, num2);
-                                break;
-                            case 4:
-                                result2 = calculator.div(num1, num2);
-                                break;
-                            default:
-                                System.out.println("Неверная операция.");
-                                continue;
-                        }
-                        result2 = calculator.simplify(result2);
-                        logger.log(result2.toString());
+                        Complex quotient = calculator.mult(num1, num2);
+                        result = quotient.toString();
                     } else {
-                        System.out.println("Неправильный тип.");
-                        continue;
+                        Rational quotient = calculator.mult(num1R, num2R);
+                        result = quotient.toString();
+                    }
+                    break;
+                case 4:
+                    if (dataType == 1) {
+                        Complex quotient = calculator.div(num1, num2);
+                        result = quotient.toString();
+                    } else {
+                        Rational quotient = calculator.div(num1R, num2R);
+                        result = quotient.toString();
                     }
                     break;
 
-                case 4:
-                    System.out.println("Завершение работы...");
-                    running = false;
-                    break;
                 default:
                     System.out.println("Неправильный выбор.");
                     continue;
