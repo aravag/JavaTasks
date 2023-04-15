@@ -1,4 +1,5 @@
 package ComplexRationalCalculator;
+
 public class ConsoleLogger implements Logger {
     @Override
     public void debug(String message) {
@@ -18,6 +19,11 @@ public class ConsoleLogger implements Logger {
     @Override
     public void error(String message) {
         System.err.println("ERROR: " + message);
+    }
+
+    @Override
+    public void log(String message) {
+        System.out.println(message);
     }
 
 }

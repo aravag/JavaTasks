@@ -1,4 +1,5 @@
 package ComplexRationalCalculator;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -25,8 +26,8 @@ public class Menu {
 
             System.out.println("Выберите операцию: 1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление");
             int operation = scanner.nextInt();
-            double num1Real, num1Imaginary, num2Real, num2Imaginary;
-            int num1Numerator, num1Denominator, num2Numerator, num2Denominator;
+            double num1Real = 0, num1Imaginary = 0, num2Real = 0, num2Imaginary = 0;
+            int num1Numerator = 0, num1Denominator = 0, num2Numerator = 0, num2Denominator = 0;
 
             if (dataType == 1) {
                 System.out.println("Введите действительную и мнимую части первого числа:");
@@ -91,7 +92,7 @@ public class Menu {
                                 result1 = calculator.div(num1, num2);
                                 break;
                             default:
-                                System.out.println("Invalid operation.");
+                                System.out.println("Неверная операция.");
                                 continue;
                         }
                         result1 = calculator.simplify(result1);
@@ -114,23 +115,23 @@ public class Menu {
                                 result2 = calculator.div(num1, num2);
                                 break;
                             default:
-                                System.out.println("Invalid operation.");
+                                System.out.println("Неверная операция.");
                                 continue;
                         }
                         result2 = calculator.simplify(result2);
                         logger.log(result2.toString());
                     } else {
-                        System.out.println("Invalid data type.");
+                        System.out.println("Неправильный тип.");
                         continue;
                     }
                     break;
 
                 case 4:
-                    System.out.println("Exiting program...");
+                    System.out.println("Завершение работы...");
                     running = false;
                     break;
                 default:
-                    System.out.println("Invalid choice.");
+                    System.out.println("Неправильный выбор.");
                     continue;
             }
         }
