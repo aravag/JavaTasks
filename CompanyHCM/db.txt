@@ -1,0 +1,10 @@
+Web Design,Ivan Ivanov,24 years,Junior UI/UX Desiger,+77777777777,usermail@example.com
+Web Design,Ekaterina Petrova,30 years,Senior UI/UX Designer,+70000000000,usermail@example.com
+Web Design,Leonard White,35 years,Head of Product Design,+70000000000,usermail@example.com
+Frontend Development,Vagan Arakelian,24 years,Junioor Frontend Developer,+77777777777,usermail@example.com
+Frontend Development,Alexader Andreev,34 years,Senior Frontend Developer,+70000000000,usermail@example.com
+Frontend Development,Alexey Ershov,36 years,Head of Frontend Development,+70000000000,usermail@example.com
+Backend Development,Vasiliy Vasilyev,22 years,Junioor Backend Developer,+77777777777,usermail@example.com
+Backend Development,Maria Ershova,34 years,Middle Backend Developer,+70000000000,usermail@example.com
+Backend Development,Alexander Zimin,40 years,Head of Backend Development,+70000000000,usermail@example.com
+Development,Andrey Andreev,37 years,CTO,+70000000000,usermail@example.com
