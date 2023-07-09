@@ -70,9 +70,4 @@ public class Person {
                 + "\nPhone: " + phone + "\nEmail: " + email;
     }
 
-    // @Override
-    // public String toString() {
-    //     return department + "," + name + "," + age + "," + jobTitle + "," + phone + "," + email;
-    // }
-
 }
